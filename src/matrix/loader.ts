@@ -132,8 +132,8 @@ export function viaAPI2Loader(): IMatrixLoader2<any> {
       return getAPIData(`/dataset/matrix/${desc.id}/raw`, {range: range.toString()}).then(maskIt(desc));
     },
     heatmapUrl: (desc: IMatrixDataDescription<any>, range: Range, options: IHeatMapUrlOptions) => {
+      const format = options.format || 'png';
       const args: any = {
-        format: options.format || 'png',
         range: range.toString()
       };
       if (options.transpose === true) {
@@ -146,7 +146,7 @@ export function viaAPI2Loader(): IMatrixLoader2<any> {
       if (options.palette) {
         args.format_palette = options.palette.toString();
       }
-      return api2absURL(`/dataset/matrix/${desc.id}/data`, args);
+      return api2absURL(`/dataset/matrix/${desc.id}/data${format}`, args);
     }
   };
   return r;

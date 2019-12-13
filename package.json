@@ -102,7 +102,7 @@
     "tsutils": "^3.3.1",
     "typedoc": "^0.15.0",
     "typedoc-plugin-as-member-of": "^1.0.2",
-    "typescript": "^3.1.0",
+    "typescript": "^2.8.0",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "url-loader": "^2.1.0",
     "webpack": "^4.16.3",
